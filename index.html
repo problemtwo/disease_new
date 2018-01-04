@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv='content-type' content='text/html; charset=utf-8' />
+		<link rel='stylesheet' href='style.css' type='text/css' />
+		<link rel='stylesheet' href='animate.min.css' type='text/css' />
+		<link href='https://use.fontawesome.com/releases/v5.0.2/css/all.css' rel='stylesheet'>
+		<script src="resources/map-data.js" charset="utf-8"></script>
+		<script src="resources/conversion.js" charset="utf-8"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src='javascript/Vector2D.js' charset='utf-8'></script>
+		<script src='javascript/input.js' charset='utf-8'></script>
+		<script src='javascript/context-functions.js' charset='utf-8'></script>
+		<script src='javascript/Agent.js' charset='utf-8'></script>
+		<script src='javascript/Airline.js' charset='utf-8'></script>
+		<script src='javascript/City.js' charset='utf-8'></script>
+		<script src='javascript/GameController.js' charset='utf-8'></script>
+		<script src='javascript/main.js' charset='utf-8'></script>
+		<script src="waypoints/lib/jquery.waypoints.min.js" charset="utf-8"></script>
+		<title>Disease</title>
+	</head>
+	<body>
+		<div id='navbar' class='animated'>
+			<h1 id='title'>Disease</h1>
+			<h3 id='subtitle'>a product by Parth, Abhi, Laker, and Sohm</h3>
+		</div>
+		<div id='sim-title' class='one-fourth sect animated'>
+			<div class='icon-cont'><i id='icon-1' class='fas fa-globe'></i></div>
+			<h1 id='title-1'>Simulation</h1>
+		</div>
+		<div id='sim-settings' class='three-fourths sect animated'>
+			<div id='fast-forward' class='setting-l'>Fast Forward (0-n)</div>
+			<textarea placeholder='1' spellcheck='false' class='setting-r'></textarea>
+			<div id='agent-count' class='setting-l'>Agent Count (0-n)</div>
+			<textarea placeholder='4000' spellcheck='false' class='setting-r'></textarea>
+			<div id='infectiousness' class='setting-l'>Infectiousness (0-1)</div>
+			<textarea placeholder='0.004' spellcheck='false' class='setting-r'></textarea>
+			<div id='deadliness' class='setting-l'>Deadliness (0-1)</div>
+			<textarea placeholder='0.001' spellcheck='false' class='setting-r'></textarea>
+			<div id='infected-rejected' class='setting-l'>Infected Rejected (0-1)</div>
+			<textarea placeholder='0.1' spellcheck='false' class='setting-r'></textarea>
+			<div id='recovered-protection' class='setting-l'>Recovered Protection (0-1)</div>
+			<textarea placeholder='0.8' spellcheck='false' class='setting-r'></textarea>
+			<div id='days-to-max-recovery' class='setting-l'>Days To Max Recovery (0-n)</div>
+			<textarea placeholder='5' spellcheck='false' class='setting-r'></textarea>
+			<div id='max-recovery-chance' class='setting-l'>Max Recovery (0-1)</div>
+			<textarea placeholder='0.05' spellcheck='false' class='setting-r'></textarea>
+			<div id='recovered-recovery' class='setting-l'>Recovered Recovery (0-n)</div>
+			<textarea placeholder='3' spellcheck='false' class='setting-r'></textarea>
+			<div id='recovered-death' class='setting-l'>Recovered Death Rate (0-1)</div>
+			<textarea placeholder='0.8' spellcheck='false' class='setting-r'></textarea>
+			<div id='recovered-days' class='setting-l'>Recovered Days (1-n)</div>
+			<textarea placeholder='80' spellcheck='false' class='setting-r'></textarea>
+			<div id='days-graphed' class='setting-l'>Days Graphed (1-n)</div>
+			<textarea placeholder='3000' spellcheck='false' class='setting-r'></textarea>
+			<div class='setting' id='stats-title'>Stats</div>
+			<div class='setting-l' id='alive'></div>
+			<div class='setting-l' id='healthy'></div>
+			<div class='setting-l' id='infected'></div>
+			<div class='setting-l' id='recovered'></div>
+			<div class='setting-l' id='dead'></div>
+			<button id='start-sim' class='setting' onclick='GC.reset();GC.controlPanel();'>(Re-)Start Simulation</button>
+		</div>
+		<div id='canvas-container' class='animated'>
+			<canvas id='canvas'></canvas>
+		</div>
+		<div id="graph">
+			<canvas id="graph-canvas"></canvas>
+		</div>
+		<div id='equation1-1' class='sect one-fourth animated'>
+			<div class='icon-cont'><i id='icon-1' class='fas fa-money-bill-alt'></i></div>
+			<h1>We solved for the cost of new equipment an airport...</h1>
+		</div>
+		<div id='equation1-2' class='sect three-fourths animated'>
+			<p>According to data on the budget of Oakland International Airport, the total cost of new sanitation checks and equipment for Oakland Airport is ...</p>
+		</div>
+		<script src="main.js" charset="utf-8"></script>
+	</body>
+</html>
